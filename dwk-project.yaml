@@ -3,3 +3,14 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: dwk-project
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: dwk-2021
+  namespace: dwk-project
+spec:
+  interval: 1m
+  url: https://github.com/strax/dwk-2021
+  ref:
+    branch: main
