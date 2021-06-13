@@ -17,30 +17,3 @@ spec:
     kind: GitRepository
     name: dwk-2021
     namespace: flux-system
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImageUpdateAutomation
-metadata:
-  name: dwk-project-automation
-  namespace: flux-system
-spec:
-  sourceRef:
-    kind: GitRepository
-    name: dwk-2021
-  interval: 1m
-  update:
-    strategy: Setters
-    path: ./project
-  git:
-    checkout:
-      ref:
-        branch: main
-    commit:
-      author:
-        name: fluxcdbot
-        email: fluxcdbot@users.noreply.github.com
-      messageTemplate: |
-        An automated update from FluxBot
-        [ci skip]        
-    push:
-      branch: main
