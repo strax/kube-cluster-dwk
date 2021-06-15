@@ -5,6 +5,7 @@ metadata:
   name: dwk-project
   annotations:
     linkerd.io/inject: enabled
+    config.linkerd.io/opaque-ports: "4222"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
